@@ -39,7 +39,7 @@ $(window).load(function()
         $.ajax(
         {
             type:"GET",
-            url:"http://www.chefsharing.it:8080/api/dashboard/",
+            url:"http://http://192.168.1.2:8080/api/dashboard/",
             crossDomain: true,
             contentType:"application/json; charset=utf-8",
             dataType:"json",
@@ -71,7 +71,7 @@ function getDataFromVideo(id) {
     $.ajax(
         {
             type:"POST",
-            url:"http://www.chefsharing.it:8080/api/video/",
+            url:"http://192.168.1.2:8080/api/video/",
             crossDomain: true,
             data:"{'id':'"+id+"'}",
             contentType:"application/json; charset=utf-8",
@@ -103,7 +103,7 @@ function getThumbPath(id, div, attr){
     $.ajax(
         {
             type:"POST",
-            url:"http://www.chefsharing.it:8080/api/video/",
+            url:"http://192.168.1.2t:8080/api/video/",
             crossDomain: true,
             data:"{'id':'"+id+"'}",
             contentType:"application/json; charset=utf-8",
@@ -120,7 +120,7 @@ function getVideoPath(id, div, attr){
     $.ajax(
         {
             type:"POST",
-            url:"http://www.chefsharing.it:8080/api/video/",
+            url:"http://192.168.1.2:8080/api/video/",
             crossDomain: true,
             data:"{'id':'"+id+"'}",
             contentType:"application/json; charset=utf-8",

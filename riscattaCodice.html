@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="css/themes/cs.min.css" />
+    <link rel="stylesheet" href="css/themes/jquery.mobile.structure-1.4.5.min.css" />
+    <link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="css/themes/jquery.mobile-1.4.5.css" />
+</head>
+<body>
+<div data-role="page" data-theme="a">
+    <div data-role="header" style="overflow:hidden;">
+        <h1>ChefSharing</h1>
+    </div><!-- /header -->
+    <section class="content">
+        <div class="content-pane">
+            <h3 class="riscattaVideo">Riscatta il codice che hai trovato nel tuo Pacco Chef</h3>
+            <input type="text" class="big" id="txtCodice" />
+            <a href="javascript:void(0);" class="invia">Invia</a>
+        </div>
+    </section>
+    <div data-role="footer" style="overflow:hidden;">
+            <h4 style="text-align:center;">I'm the footer</h4>
+    </div><!-- /footer -->
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.mobile-1.4.5.min.js"></script>
+<script src="js/app.js"></script>
+<script>
+    $(".invia").click(function(sender) {
+        $.ajax({
+            url: "http://www.chefsharing.it:8080/api/registration",
+            type: "POST",
+            crossDomain: true,
+            contentType:"application/json; charset=utf-8",
+            dataType:"json",
+            data: "{'uuid' : '"+ $("#txtCodice").val() +"'}",
+            success: function(data)
+            {
+                window.location = "index.html";
+            }
+        });
+    });
+</script>
+</body>
+</html>
